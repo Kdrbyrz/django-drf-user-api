@@ -64,5 +64,5 @@ class UserSignUpViewSet(viewsets.ViewSet):
 
             user.set_password(serializer.data["password"])
             user.save()
-            return Response({"status": "User Created."})
+            return Response({"status": "User created."})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
