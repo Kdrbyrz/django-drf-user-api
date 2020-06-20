@@ -1,0 +1,40 @@
+[
+{
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$qXYgUURQbgWu$yj8pJ4nWBuQEO912HDe0+ap1KdCAgoiXz+qHSrBSxgc=",
+        "last_login": "2020-06-20T17:33:40Z",
+        "is_superuser": true,
+        "username": "kadir",
+        "first_name": "Kadir Fatih",
+        "last_name": "Boyraz",
+        "email": "kadirboyraz78@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-06-20T17:33:00Z",
+        "bio": "Bir yazilimci",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$qXYgUURQbgWu$yj8pJ4nWBuQEO912HDe0+ap1KdCAgoiXz+qHSrBSxgc=",
+        "last_login": "2020-06-20T17:33:40Z",
+        "is_superuser": true,
+        "username": "gokhan",
+        "first_name": "Gokhan",
+        "last_name": "Sari",
+        "email": "gokhansari@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-06-20T17:33:00Z",
+        "bio": "hayat guzel",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
