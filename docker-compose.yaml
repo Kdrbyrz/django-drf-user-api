@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  django-drf-user-api-web:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/src
+    ports:
+      - 8001:8000
+    depends_on:
+      - django-drf-user-api-db
+    environment:
+      - DEBUG=1
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_DATABASE=django_drf_user_api
+      - SQL_USER=django_drf_user_api
+      - SQL_PASSWORD=django_drf_user_api
+      - SQL_HOST=django-drf-user-api-db
+      - SQL_PORT=5432
+
+  django-drf-user-api-db:
+    image: postgres:11.2-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=django_drf_user_api
+      - POSTGRES_PASSWORD=django_drf_user_api
+      - POSTGRES_DB=django_drf_user_api
