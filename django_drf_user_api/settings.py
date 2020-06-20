@@ -25,12 +25,14 @@ SECRET_KEY = 'u!&9b+^f5zk-u!zw$^f!(jwmq-)pe5$e8@@_^zd5-c2=11z&)7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "api.apps.ApiConfig",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-
-    'api',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+FIXTURE_DIRS = [os.path.join(BASE_DIR, "fixtures")]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
