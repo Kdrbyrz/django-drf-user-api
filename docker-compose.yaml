@@ -9,7 +9,7 @@ services:
     volumes:
       - ./:/src
     ports:
-      - 8001:8000
+      - 8000:8000
     depends_on:
       - django-drf-user-api-db
     environment:

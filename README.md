@@ -2,6 +2,11 @@
 
 ## Installation
 
+### Default User
+
+username = kadir
+password = 123456
+
 ### Development
 
 Uses the default Django development server.

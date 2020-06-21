@@ -15,6 +15,8 @@ set -euxo pipefail
 
 python manage.py migrate
 
+python manage.py loaddata users
+
 python manage.py collectstatic --no-input --clear
 
 exec "$@"
