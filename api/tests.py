@@ -125,6 +125,16 @@ class UserApiTestCase(TestCase):
         self.assertEqual(len(response_json), 1)
         self.assertEqual(response_json[0]["first_name"], self.user.first_name)
 
+    def test_get_search_with_unmatched_username(self):
+        auth_headers = {
+            "HTTP_AUTHORIZATION": "Basic "
+            + base64.b64encode("kadir:123456".encode()).decode(),
+        }
+        response = self.client.get("/users/search/?username=nonexist", **auth_headers)
+        self.assertEqual(response.status_code, 200)
+        response_json = response.json()
+        self.assertEqual(len(response_json), 0)
+
     def test_get_search_without_auth(self):
         response = self.client.get("/users/search/")
         self.assertEqual(response.status_code, 401)
