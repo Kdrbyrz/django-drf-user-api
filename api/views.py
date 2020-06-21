@@ -55,11 +55,11 @@ class UserSignUpViewSet(viewsets.ViewSet):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             user = User.objects.create(
-                username=serializer.data["username"],
-                email=serializer.data["email"],
-                first_name=serializer.data["first_name"],
-                last_name=serializer.data["last_name"],
-                bio=serializer.data["bio"],
+                username=serializer.data.get("username"),
+                email=serializer.data.get("email", ""),
+                first_name=serializer.data.get("first_name", ""),
+                last_name=serializer.data.get("last_name", ""),
+                bio=serializer.data.get("bio"),
             )
 
             user.set_password(serializer.data["password"])
